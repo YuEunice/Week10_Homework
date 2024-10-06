@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crude Death Rate and Total Deaths by State in Malaysia, 2022</title>
+    <script src="https://cdn.jsdelivr.net/npm/vega@5.21.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.2.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.20.0"></script>
+    <style>
+        html, body {
+            height: 100%; /* Ensures the body and HTML cover full height */
+            margin: 0;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            text-align: center;
+            padding: 15px;
+            background-color: #c0c9df; /* Background color outside the dashboard */
+        }
+
+        h1 {
+            font-family: 'Impact', fantasy;
+            font-size: 2.5em;
+            color: #4b4243;
+            margin: 20px 0;
+            display: inline-block;
+        }
+
+        .dashboard {
+            background-color: rgb(231, 236, 240); /* Dashboard background color */
+            width: 1000px;
+            margin: auto; /* Centers the dashboard within the body */
+        }
+
+        #choropleth_map {
+            left: -50px;
+            margin-bottom: 10px;
+        }
+
+        .bottom-charts {
+            display: flex;
+            width: 1000px;
+            justify-content: flex-start;
+            align-items: flex-start;
+        }
+
+        #diverging_bar {
+            left: 50px;
+        }
+        
+
+    </style>
+
+</head>
+
+<body>
+
+    <div class="dashboard">
+        <h1>Overview of Deaths by State in Malaysia, 2022</h1>
+        <div id="choropleth_map"></div> <!-- Choropleth map on top -->
+        
+        <div class="bottom-charts">
+            <div id="diverging_bar"></div> <!-- Diverging bar on the left -->
+            <div id="dot_plot"></div> <!-- Dot plot (or another chart) on the right -->
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        var spec1 = "choropleth.json";
+        vegaEmbed('#choropleth_map', spec1).then(function(result) {
+            // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+        }).catch(console.error);
+
+        var spec2 = "diverging_bar.json";
+        vegaEmbed('#diverging_bar', spec2).then(function(result) {
+            // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+        }).catch(console.error);
+
+        //var spec3 = "dot_plot.json";
+        //vegaEmbed('#dot_plot', spec3).then(function(result) {
+             // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+        //}).catch(console.error);
+    </script>
+
+</body>
+
+</html>

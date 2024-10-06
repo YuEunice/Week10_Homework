@@ -2,7 +2,7 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "description": "A population pyramid for crude death rates by gender and state in Malaysia, 2022",
   "data": {
-    "url": "https://raw.githubusercontent.com/YuEunice/3179/main/data/Total_deaths_states_data.csv",
+    "url": "https://raw.githubusercontent.com/YuEunice/Week10_Homework/main/data/Total_deaths_states_data.csv",
     "format": {
       "type": "csv"
     }
